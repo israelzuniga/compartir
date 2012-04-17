@@ -2,5 +2,45 @@
 html
   head
     title= title
+    link(href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+  body(class="#{classes}")
+    header
+      .inner
+        a(href="/", id="logo")
+          img(src="/images/logo.png", title="compart.ir")
+        nav#header-menu
+          ul
+            li.first
+              &nbsp;
+            if user
+              li
+                a(href="/profile") #{user.matricula} | #{user.name}
+              li
+                a(href="/logout") Salir
+              li.last
+                &nbsp;
+              li
+                a(href="/new", id="newride") Crear Viaje
+            else
+              li
+                a(href="/login") Iniciar Sesion
+              li.last
+                &nbsp;
+    article#main-content  
+      .inner
+        h1(id="page-title") #{title}
+        #wrapper!= body
+    footer
+      .inner
+        nav#footer-menu
+          ul
+            li
+              a(href='#') Link 1
+            li
+              a(href='#') Link 2 
+            li
+              a(href='#') Link 3
+            li
+              a(href='#') Link 4 
+        
