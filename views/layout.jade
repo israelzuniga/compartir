@@ -1,7 +1,7 @@
 !!!
 html
   head
-    title= title
+    title #{title} | Compart.ir
     link(href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(class="#{classes}")
@@ -15,7 +15,9 @@ html
               &nbsp;
             if user
               li
-                a(href="/profile") #{user.matricula} | #{user.name}
+                a(href="/profile") #{user.matricula}
+              li
+                a(href="/profile") #{user.name}
               li
                 a(href="/logout") Salir
               li.last

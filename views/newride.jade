@@ -1,41 +1,46 @@
 .container
-  .ruta
-    form(name="newride", id="newride", method="POST", action="new")
-      .left  
-        .row  
-          h2 ¿Qué quieres hacer?
-          .option
-            label(for="give") Dar ride
-            radio(id="give", name="action", value="give")
-          .option
-            label(for="get") Recibir ride
-            radio(id="get", name="action", value="get")
-          .option
-            label(for="both") Ambos
-            radio(id="both", name="action", value="both")
-        .row
-          h2 ¿Cuál es tu ruta?
-          .option
-            label(for="from") ¿De dónde sales?
-            input(type="text", id="from", name="from")
-          .option
-            label(for="to") ¿A dónde llegas?
-            input(type="to", id="from", name="to")
-        .row
-          h2 ¿Cuál es tu horario?
-          .option  
-            label(for="start") Hora de salida
-            input(type="text", id="start", name="start")
-          .option  
-            label(for="llegada") Hora de llegada
-            input(type="text", id="llegada", name="llegada")
-      .right
-        .row
-          #mapa
-        .row
-          h2 Observaciones
-          .option
-            textarea(id="observaciones", name="observaciones")
-      .bottom
-        .share-button
-          input(type="submit", value="Compartir Viaje")
+  div(class="inner clearfix")
+    .ruta
+      form(name="newride", id="newride", method="POST", action="new")
+        .left
+          div(class="inner clearfix")
+            .row.what-to-do  
+              h2 ¿Qué quieres hacer?
+              .option
+                label(for="give") Dar ride
+                input(type="radio", id="give", name="action", value="give")
+              .option
+                label(for="get") Recibir ride
+                input(type="radio", id="get", name="action", value="get")
+              .option
+                label(for="both") Ambos
+                input(type="radio", id="both", name="action", value="both")
+            .row.route
+              h2 ¿Cuál es tu ruta?
+              .option
+                label(for="from") ¿De dónde sales?
+                input(type="text", id="from", name="from")
+              .option
+                label(for="to") ¿A dónde llegas?
+                input(type="text", id="to", name="to")
+            .row.schedule
+              h2 ¿Cuál es tu horario?
+              .option  
+                label(for="start") Hora de salida
+                input(type="text", id="start", name="start")
+              .option  
+                label(for="arrival") Hora de llegada
+                input(type="text", id="arrival", name="arrival")
+        .right
+          div(class="inner clearfix")
+            .row.map
+              #map
+                <iframe width="570" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=guadalajara&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=42.310334,93.955078&amp;ie=UTF8&amp;hq=&amp;hnear=Guadalajara,+Jalisco,+Mexico&amp;t=m&amp;z=13&amp;ll=20.67359,-103.343803&amp;output=embed"></iframe>
+            .row.observations
+              h2 Observaciones
+              .option
+                textarea(id="comments", name="comments")
+        .bottom
+          div(class="inner clearfix")
+            .share-button
+              input( id="submit", type="submit", value="Compartir Viaje")
