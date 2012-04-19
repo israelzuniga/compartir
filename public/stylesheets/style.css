@@ -78,21 +78,22 @@ header nav li.last{
   border-left:1px solid #000;
 }
 
+header nav li#nr{
+  border:0px;
+}
+
 header nav li #newride{
   position:absolute;
   height:30px;
   line-height:30px;
-  border:1px solid #222;
   border-bottom-left-radius:5px;
   border-bottom-right-radius:5px;
   background:#04bae6;
   color:#fff;
-  margin-top:50px;
+  margin-top:51px;
   margin-left:-113px;
   text-decoration:none;
-  -moz-box-shadow:0 2px 4px #666;
-  -webkit-box-shadow: 0 2px 4px #666;
-  box-shadow: 0 2px 4px #666;
+  border:0px;
 }
 
 
@@ -177,16 +178,13 @@ header #header-menu{
   margin-right:auto;
   height:30px;
   line-height:30px;
-  border:1px solid #222;
   border-bottom-left-radius:5px;
   border-bottom-right-radius:5px;
   padding:5px;
   background:#04bae6;
   color:#fff;
   text-decoration:none;
-  -moz-box-shadow:0 2px 4px #666;
-  -webkit-box-shadow: 0 2px 4px #666;
-  box-shadow: 0 2px 4px #666;
+  bordeR:0px;
 }
 
 .new-ride label{
