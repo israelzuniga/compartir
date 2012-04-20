@@ -43,5 +43,16 @@ app.get('/new', function(req, res) {
   });
 });
 
+app.get('/matches', function(req, res) {
+  var user = {matricula:"d242543645", name:"Marcos Mellado"}
+  res.render('matches.jade', {
+    locals: { 
+    	user: user,
+    	title: 'Coincidencias Encontradas',
+    	classes: "matching-rides"
+    }
+  });
+});
+
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
