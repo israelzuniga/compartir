@@ -1,41 +1,40 @@
 .container
   div(class="inner clearfix")
     .ruta
-      form(name="newride", id="newride", method="POST", action="new")
+      form(name="newride", id="newride", method="POST", action="matches")
         .left
           div(class="inner clearfix")
             .row.what-to-do  
               h2 ¿Qué quieres hacer?
               .option
                 label(for="give") Dar ride
-                input(type="radio", id="give", name="action", value="give")
+                input(type="radio", id="with_car", name="type_u", value="0")
               .option
                 label(for="get") Recibir ride
-                input(type="radio", id="get", name="action", value="get")
+                input(type="radio", id="passenger", name="type_u", value="1")
               .option
                 label(for="both") Ambos
-                input(type="radio", id="both", name="action", value="both")
+                input(type="radio", id="both", name="type_u", value="2")
             .row.route
               h2 ¿Cuál es tu ruta?
               .option
-                label(for="from") ¿De dónde sales?
-                input(type="text", id="from", name="from")
+                label(for="origin") ¿De dónde sales?
+                input(type="text", id="origin", name="origin")
               .option
-                label(for="to") ¿A dónde llegas?
-                input(type="text", id="to", name="to")
+                label(for="destination") ¿A dónde llegas?
+                input(type="text", id="destination", name="destination")
             .row.schedule
               h2 ¿Cuál es tu horario?
               .option  
-                label(for="start") Hora de salida
-                input(type="text", id="start", name="start")
+                label(for="schedule_departure_time") Hora de salida
+                input(type="text", id="schedule_departure_time", name="schedule_departure_time")
               .option  
-                label(for="arrival") Hora de llegada
-                input(type="text", id="arrival", name="arrival")
+                label(for="schedule_return_time") Hora de llegada
+                input(type="text", id="schedule_return_time", name="schedule_return_time")
         .right
           div(class="inner clearfix")
             .row.map
               #map
-                <iframe width="570" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=guadalajara&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=42.310334,93.955078&amp;ie=UTF8&amp;hq=&amp;hnear=Guadalajara,+Jalisco,+Mexico&amp;t=m&amp;z=13&amp;ll=20.67359,-103.343803&amp;output=embed"></iframe>
                 .description 
                   strong Pro Tip:
                   span Puedes modificar tu ruta arrastrando el punto azul en el mapa.
