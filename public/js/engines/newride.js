@@ -67,6 +67,8 @@ $(function(){
     $('.total').css("visibility", "visible"); 
   })
   
+  $('#date').datepicker();
+  
   $("#origin, #destination").geo_autocomplete(
     new google.maps.Geocoder,
     {

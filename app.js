@@ -45,7 +45,7 @@ app.get('/newride', function(req, res) {
      user: user,
      title: 'Crear nuevo viaje',
      classes: "new-ride",
-     styles:["stylesheets/ui/css/ui-lightness/jquery-ui-1.8.19.custom.css"],
+     styles:["stylesheets/ui/css/redmond/jquery-ui-1.8.19.custom.css"],
      scripts: [
       "http://maps.googleapis.com/maps/api/js?sensor=false",
       "js/libs//ui/js/jquery-ui-1.8.19.custom.min.js",
