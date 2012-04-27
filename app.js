@@ -69,9 +69,7 @@ app.post('/matches', function(req, res) {
     locals: {
      user: user,
      title: 'Coincidencias Encontradas',
-     classes: "matching-rides",
-     styles:[],
-     scripts: []  
+     classes: "matching-rides", 
     }
   });
 });

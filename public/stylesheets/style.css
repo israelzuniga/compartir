@@ -195,7 +195,7 @@ h1#page-title{
 }
 
 .new-ride .left .row.schedule{
-  padding-bottom:49px;
+  border-bottom:0px;
 }
 
 .new-ride .what-to-do input{
@@ -219,7 +219,7 @@ h1#page-title{
 .new-ride .what-to-do label:active{
   -moz-box-shadow: inset 0 0 3px 3px #888;
   -webkit-box-shadow: inset 0 0 3px 3px #888;
-  box-shadow: inset 0 0 3px 3px #888;
+  box-shadow: inset 0 0 px 3px #888;
 }
 
 .new-ride .what-to-do label.with_car{

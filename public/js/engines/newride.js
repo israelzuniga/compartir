@@ -23,10 +23,10 @@ $(function(){
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
     google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
       computeTotalDistance(directionsDisplay.directions);
+      console.log(directionsDisplay.directions.routes);
       $("#route").val(JSON.stringify(directionsDisplay.directions.routes));//route
     });
   }
