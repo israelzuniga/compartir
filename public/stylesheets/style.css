@@ -142,6 +142,32 @@ header #header-menu{
   margin-top:5px;
 }
 
+.ui-autocomplete li{
+  list-style:none;
+  width:371px !important;
+  background:#fff;
+  border:1px solid #ccc;
+  border-top:0px;
+  padding-top:5px;
+  padding-bottom:3px;
+  padding-left:5px;
+  cursor:pointer;
+}
+
+.ui-autocomplete li br,
+.ui-autocomplete li img{
+  display:none;
+}
+
+.ui-autocomplete li a{
+  width:100%;
+  text-decoration:none;
+}
+
+.ui-autocomplete li:hover{
+  background:#eee;
+}
+
 #main-content > .inner{
   padding:20px;
 }
@@ -159,6 +185,7 @@ h1#page-title{
   border-bottom:0px;
   font-size:18px;
   border-bottom:1px solid #e9e9e9;
+  
 }
 
 .new-ride .left,
@@ -166,6 +193,59 @@ h1#page-title{
   width:40%;
   float:left;
 }
+
+.new-ride .left .row.schedule{
+  padding-bottom:49px;
+}
+
+.new-ride .what-to-do input{
+  display:none;
+}
+
+.new-ride .what-to-do label{
+  display:block;
+  width:88px;
+  height:37px;
+  float:left;
+  cursor:pointer;
+  background:url(../images/icons/ride.png);
+  margin-right:35px;
+  line-height:120px;
+  text-align:center;
+  margin-bottom:25px;
+  border-radius:2px;
+}
+
+.new-ride .what-to-do label:active{
+  -moz-box-shadow: inset 0 0 3px 3px #888;
+  -webkit-box-shadow: inset 0 0 3px 3px #888;
+  box-shadow: inset 0 0 3px 3px #888;
+}
+
+.new-ride .what-to-do label.with_car{
+  background-position: 0 0;
+}
+
+.new-ride .what-to-do label.passenger{
+  background-position: -99px 0;
+}
+
+.new-ride .what-to-do label.both{
+  background-position: -196px 0;
+}
+
+.new-ride .what-to-do label.with_car.checked{
+  background-position: 0 47px;
+}
+
+.new-ride .what-to-do label.passenger.checked{
+  background-position: -99px 47px;
+}
+
+.new-ride .what-to-do label.both.checked{
+  background-position: -196px 47px;
+}
+
 
 .new-ride .right,
 .matching-rides .right{

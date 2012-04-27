@@ -1,33 +1,18 @@
-/**
-* Module dependencies.
-*/
+//UUU
 
-var express = require('express'),
-    routes = require('./routes'),
-	models = require('./models'),
-	mongoose = require('mongoose')
-    user = null;
+var express = require('express');
+var routes = require('./routes');
+var mongoose = require('mongoose');
+var ObjectId = mongoose.Types.ObjectId;
+var mongostore = require('connect-mongodb');
+var models = require('./models.js');
+var Ride;
+var user = null;
+    
+mongoose.connect('mongodb://localhost/compartir-dev');
 
-var db;
 var app = module.exports = express.createServer();
 
-//DB Config
-app.configure('development', function(){
-	app.set('db-uri', 'mongodb://localhost/compartir-dev');
-  app.use(express.errorHandler());
-});
-
-app.configure('production', function(){
-	app.set('db-uri', 'mongodb://localhost/compartir-prod');
-  app.use(express.errorHandler());
-});
-
-//DB Model
-models.defineModels(mongoose, function() {
-  app.User = User = mongoose.model('User');
-  app.Ride = Ride = mongoose.model('Ride');
-  db = mongoose.connect(app.set('db-uri'));
-})
 
 // Configuration
 
@@ -38,6 +23,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.Ride = Ride = mongoose.model('Ride');
 });
 
 app.configure('development', function(){
@@ -52,28 +38,44 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 
-app.get('/new', function(req, res) {
+app.get('/newride', function(req, res) {
   var user = {matricula:"d242543645", name:"Marcos Mellado"}
   res.render('newride.jade', {
     locals: {
      user: user,
      title: 'Crear nuevo viaje',
-     classes: "new-ride"
+     classes: "new-ride",
+     styles:["stylesheets/ui/css/ui-lightness/jquery-ui-1.8.19.custom.css"],
+     scripts: [
+      "http://maps.googleapis.com/maps/api/js?sensor=false",
+      "js/libs//ui/js/jquery-ui-1.8.19.custom.min.js",
+      "js/libs/ui.geo_autocomplete.js",
+      "js/engines/newride.js"
+      ]  
     }
   });
 });
 
 app.post('/matches', function(req, res) {
+
+	//save
+	console.log(req.body);
+	var rr = new Ride(req.body);
+	rr.save();
+
   var user = {matricula:"d242543645", name:"Marcos Mellado"}
   console.log(req.body);
   res.render('matches.jade', {
     locals: {
      user: user,
      title: 'Coincidencias Encontradas',
-     classes: "matching-rides"
+     classes: "matching-rides",
+     styles:[],
+     scripts: []  
     }
   });
 });
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+

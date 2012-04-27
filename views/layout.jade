@@ -4,6 +4,15 @@ html
     title #{title} | Compart.ir
     link(rel="icon", type="image/x-icon", href="/images/favicon.ico")
     link(rel="shortcut icon", type="image/x-icon", href="/images/favicon.ico")
+    meta(name="viewport", content="initial-scale=1.0, user-scalable=no")
+    meta(http-equiv="content-type", content="text/html; charset=UTF-8")  
+    script(src="/js/libs/jquery.min.js")
+    - if (typeof(styles) != 'undefined')  
+      each l in styles
+        link(href=l)
+    - if (typeof(scripts) != 'undefined') 
+      each s in scripts
+        script(src=s)  
     link(href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(class="#{classes}")

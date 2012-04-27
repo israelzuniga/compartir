@@ -6,14 +6,14 @@
           div(class="inner clearfix")
             .row.what-to-do  
               h2 ¿Qué quieres hacer?
-              .option
-                label(for="give") Dar ride
+              .option.clearfix
+                label(for="with_car", class="with_car radio") Dar ride
                 input(type="radio", id="with_car", name="type_u", value="0")
-              .option
-                label(for="get") Recibir ride
+              .option.clearfix
+                label(for="passenger", class="passenger radio") Recibir ride
                 input(type="radio", id="passenger", name="type_u", value="1")
-              .option
-                label(for="both") Ambos
+              .option.clearfix
+                label(for="both", class="both radio") Ambos
                 input(type="radio", id="both", name="type_u", value="2")
             .row.route
               h2 ¿Cuál es tu ruta?
@@ -23,6 +23,10 @@
               .option
                 label(for="destination") ¿A dónde llegas?
                 input(type="text", id="destination", name="destination")
+                .description.total(style="visibility:hidden")
+                  span Distancia total:&nbsp;
+                  span#total
+                input(type="hidden", name="route", id="route")  
             .row.schedule
               h2 ¿Cuál es tu horario?
               .option  
@@ -35,7 +39,7 @@
           div(class="inner clearfix")
             .row.map
               #map
-                <iframe width="570" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=guadalajara&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=42.310334,93.955078&amp;ie=UTF8&amp;hq=&amp;hnear=Guadalajara,+Jalisco,+Mexico&amp;t=m&amp;z=13&amp;ll=20.67359,-103.343803&amp;output=embed"></iframe>
+                div(id="map_canvas" , style="width:570px; height: 350px;")
                 .description 
                   strong Pro Tip:
                   span Puedes modificar tu ruta arrastrando el punto azul en el mapa.
